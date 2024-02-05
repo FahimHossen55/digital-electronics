@@ -14,25 +14,51 @@ Truth table for basic logic operation:
 
 {% tabs %}
 {% tab title="AND" %}
-<table><thead><tr><th align="center">A</th><th width="153" align="center">B</th><th align="center">A.B</th></tr></thead><tbody><tr><td align="center">0</td><td align="center">0</td><td align="center">0</td></tr><tr><td align="center">0</td><td align="center">1</td><td align="center">0</td></tr><tr><td align="center">1</td><td align="center">0</td><td align="center">0</td></tr><tr><td align="center">1</td><td align="center">1</td><td align="center">1</td></tr></tbody></table>
+$$
+\begin{array}{|cc|c|}
+\hline
+\text{A} & \text{B} & \text{AB} \\
+\hline
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+\hline
+\end{array}
+$$
+
 {% endtab %}
 
 {% tab title="OR" %}
-|  A  |  B  | A+B |
-| :-: | :-: | :-: |
-|  0  |  0  |  0  |
-|  0  |  1  |  1  |
-|  1  |  0  |  1  |
-|  1  |  1  |  1  |
+$$
+\begin{array}{|cc|c|}
+\hline
+\text{A} & \text{B} & \text{A+B} \\
+\hline
+0 & 0 & 0 \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 1 \\
+\hline
+\end{array}
+$$
 {% endtab %}
 
 {% tab title="NOT" %}
-|  A  | \~A |
-| :-: | :-: |
-|  0  |  1  |
-|  1  |  0  |
+$$
+\begin{array}{|c|c|}
+\hline
+\text{A} & \sim \text{A} \\
+\hline
+0 & 1 \\
+1 & 0 \\
+\hline
+\end{array}
+$$
 {% endtab %}
 {% endtabs %}
+
+
 
 The order of evaluation is:
 
@@ -80,15 +106,15 @@ In the earliest computers, switches were opened and closed by magnetic fields pr
 
 <div align="center">
 
-<figure><img src=".gitbook/assets/AND.jpg" alt="AND Gate" width="188"><figcaption><p>AND Gate</p></figcaption></figure>
+<figure><img src=".gitbook/assets/boolean-algebra/AND.jpg" alt="AND Gate" width="188"><figcaption><p>AND Gate</p></figcaption></figure>
 
  
 
-<figure><img src=".gitbook/assets/OR.jpg" alt="" width="188"><figcaption><p>OR Gate</p></figcaption></figure>
+<figure><img src=".gitbook/assets/boolean-algebra/OR.jpg" alt="" width="188"><figcaption><p>OR Gate</p></figcaption></figure>
 
  
 
-<figure><img src=".gitbook/assets/NOT.jpg" alt="" width="188"><figcaption><p>NOT Gate</p></figcaption></figure>
+<figure><img src=".gitbook/assets/boolean-algebra/NOT.jpg" alt="" width="188"><figcaption><p>NOT Gate</p></figcaption></figure>
 
 </div>
 
@@ -110,12 +136,20 @@ $$
 
 {% tabs %}
 {% tab title="Example 1" %}
-|  A  |  B  | F=A.B + A.B' |
-| :-: | :-: | :----------: |
-|  0  |  0  |       0      |
-|  0  |  1  |       0      |
-|  1  |  0  |       1      |
-|  1  |  1  |       1      |
+
+$$
+\begin{array}{|cc|c|}
+\hline
+\text{A} & \text{B} & F=A.B + A.\overline{B} \\
+\hline
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+1 & 1 & 1 \\
+\hline
+\end{array}
+$$
+
 {% endtab %}
 
 {% tab title="Example 2" %}
@@ -126,7 +160,9 @@ $$
 Example 2:
 
 $$
-\begin{align*} F &= A.B + A.B'C + AB'C' \\ &= A(B+B'C+B'C') \\ &= A(B+C+B'C') \quad \# Distributive \, law \\ &= A(B+C+C') \quad \# Distributive \, law \\ &= A(B+1) \\ &= A.1 \\ &= A \end{align*}
+\begin{align*} F &= A.B + A.B'C + AB'C' \\ &= A(B+B'C+B'C') \\ &= A(B+C+B'C') \quad \text{Distributive law} \\ 
+&= A(B+C+C') \quad \text{Distributive law} \\ 
+&= A(B+1) \\ &= A.1 \\ &= A \end{align*}
 $$
 
 Example 3:
@@ -134,8 +170,8 @@ Example 3:
 $$
 \begin{align*}
     F   &= (A+B+C)(A+B'+C)(A+B+C') \\
-        &= (A+B+C)(A+B+C')(A+B'+C) \quad \#Commulative\, law \\
-        &= (X+C.C')(A+B'+C) \quad let, \quad X=A+B \quad \#Distributive \, law \\
+        &= (A+B+C)(A+B+C')(A+B'+C) \quad \text{Commulative law} \\
+        &= (X+C.C')(A+B'+C) \quad let, \quad X=A+B \quad \text{Distributive law} \\
         &= (X+0)(A+B'+C) \\
         &= X(A+B'+C) \\
         &= (A+B)(A+B'+C) \\

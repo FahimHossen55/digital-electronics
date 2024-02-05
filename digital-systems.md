@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Digital Systems
 
 ## Numerical Representation
@@ -35,7 +21,7 @@ digital == discrete
 
 ## Analog System and Digital System
 
-A digital system is a combination of devices designed to manipulate logical information or physical quantities that are represented in digital form; that is, the quantities can take on only discrete values.&#x20;
+A digital system is a combination of devices designed to manipulate logical information or physical quantities that are represented in digital form; that is, the quantities can take on only discrete values.
 
 An analog system contains devices that manipulate quantities that are represented in analog form. These quantities can vary over a continuous range of values.
 
@@ -72,3 +58,9 @@ Recording of audio -> Tocci -> page 8
 
 ### Transfer of information among Resisters
 
+
+## Combinational & Sequential Logic
+
+In combinational logic, the outputs depend only on the current inputs. 
+
+In sequential logic, the outputs depend on the current inputs and the past inputs. Meaning, we have memory to store the past inputs. The memory is in the form of flip-flops.
